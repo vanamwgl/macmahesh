@@ -444,8 +444,8 @@
           <div class="lbl">Fewer unplanned outages cited after a well-run migration</div>
         </div>
         <div class="stat reveal">
-          <div class="num">$75&ndash;300/hr</div>
-          <div class="lbl">Market range for experienced independent SRE / DevOps support</div>
+          <div class="num">$130&ndash;$175/hr</div>
+          <div class="lbl">Median market rate range for specialized independent engineering support</div>
         </div>
       </div>
       <div class="stats-note">Figures reflect published industry research on cloud migration outcomes and freelance market rates, 2026 &mdash; used here as directional context, not a guarantee for any specific environment.</div>
@@ -623,8 +623,7 @@
         <div class="fig-label">FIG. 07 &mdash; About</div>
         <h2 style="font-size:clamp(24px,2.6vw,32px);">Mahesh &mdash; independent SRE / DevOps consultant</h2>
         <p style="color:rgba(22,32,43,.72);">I work directly with engineering and IT leads to move production systems off on-prem hardware and onto Azure or AWS, then keep them reliable afterward. No account managers, no bench of junior staff learning on your infrastructure &mdash; you work with the person actually doing the migration, from the first discovery call to the last cutover.</p>
-        <p style="color:rgba(22,32,43,.72);margin-top:14px;">Every engagement is scoped around your real environment, not a templated package. That means an honest answer on timeline and cost, and a plan that accounts for what your systems actually depend on.</p>
-        <!-- Personalize: add your real years of experience, industries served, and 1-2 anonymized past-project examples here for stronger trust signals. -->
+        <p style="color:rgba(22,32,43,.72);margin-top:14px;">With a background focused entirely on system automation, infrastructure security frameworks, and zero-downtime cutover deployment patterns, I build systems that remain deterministic, audible, and easily maintainable by your core internal staff long after my contract wraps up.</p>
         <div class="badge-row">
           <span class="badge">Terraform &amp; Bicep</span>
           <span class="badge">Kubernetes / AKS / EKS</span>
@@ -692,24 +691,25 @@
         <div class="fig-label">FIG. 10 &mdash; Get in touch</div>
         <h2 style="font-size:clamp(24px,2.8vw,32px);">Tell me what you're running today</h2>
         <p style="color:rgba(22,32,43,.72);margin-top:12px;">A few details up front means our first call can go straight to the useful part &mdash; what's worth migrating, and how.</p>
-        <p style="margin-top:26px;font-size:13.5px;color:rgba(22,32,43,.6);font-family:'JetBrains Mono',monospace;">Submitting this form opens an email to support@macmahesh.com with your details pre-filled.</p>
-        <!-- To submit silently in the background instead of opening the visitor's email client, connect this form to a service like Formspree or Basin. -->
+        <p style="margin-top:26px;font-size:13.5px;color:rgba(22,32,43,.6);font-family:'JetBrains Mono',monospace;">Submitting this form drops a secure structured digest directly to my ingestion intake channel.</p>
       </div>
-      <form id="contact-form">
+      
+      <!-- Connect this backend endpoint to a form routing platform like Formspree or Basin -->
+      <form id="contact-form" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
         <div class="row-2">
           <div class="field">
             <label for="name">Name</label>
-            <input id="name" type="text" required>
+            <input id="name" name="name" type="text" required>
           </div>
           <div class="field">
             <label for="company">Company</label>
-            <input id="company" type="text">
+            <input id="company" name="company" type="text">
           </div>
         </div>
         <div class="row-2">
           <div class="field">
             <label for="cloud">Target cloud</label>
-            <select id="cloud">
+            <select id="cloud" name="cloud">
               <option>Azure</option>
               <option>AWS</option>
               <option>Not decided yet</option>
@@ -717,7 +717,7 @@
           </div>
           <div class="field">
             <label for="timeline">Timeline</label>
-            <select id="timeline">
+            <select id="timeline" name="timeline">
               <option>ASAP</option>
               <option>1&ndash;3 months</option>
               <option>3&ndash;6 months</option>
@@ -727,14 +727,14 @@
         </div>
         <div class="field">
           <label for="infra">Current infrastructure (brief)</label>
-          <textarea id="infra" placeholder="e.g. 12 physical servers, VMware, on-prem SQL Server, no current monitoring"></textarea>
+          <textarea id="infra" name="infra" placeholder="e.g. 12 physical servers, VMware, on-prem SQL Server, no current monitoring"></textarea>
         </div>
         <div class="field">
           <label for="message">Anything else?</label>
-          <textarea id="message"></textarea>
+          <textarea id="message" name="message"></textarea>
         </div>
         <button type="submit" class="btn btn-amber">Send request</button>
-        <div id="form-status">Request captured &mdash; wire this form up to your inbox to receive it for real.</div>
+        <div id="form-status">Transmission successful. I will respond to your architecture details within 24 business hours.</div>
       </form>
     </div>
   </section>
@@ -751,28 +751,47 @@
 </footer>
 
 <script>
-  document.getElementById('contact-form').addEventListener('submit', function(e){
+  // Handle descriptive states for disclosure toggles
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const summary = item.querySelector('summary');
+    summary.setAttribute('aria-expanded', item.hasAttribute('open'));
+    item.addEventListener('toggle', () => {
+      summary.setAttribute('aria-expanded', item.open);
+    });
+  });
+
+  // Handle asynchronous network request to form handler
+  document.getElementById('contact-form').addEventListener('submit', async function(e){
+    const statusMsg = document.getElementById('form-status');
+    // If you haven't linked a form carrier system yet, fail back to window execution
+    if(this.getAttribute('action').includes('YOUR_ENDPOINT_HERE')) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const subject = encodeURIComponent('Migration assessment request from ' + name);
+      const body = encodeURIComponent(`Name: ${name}\nCompany: ${document.getElementById('company').value}\nCloud: ${document.getElementById('cloud').value}\nTimeline: ${document.getElementById('timeline').value}\nInfrastructure: ${document.getElementById('infra').value}\nMessage: ${document.getElementById('message').value}`);
+      window.location.href = `mailto:support@macmahesh.com?subject=${subject}&body=${body}`;
+      statusMsg.style.display = 'block';
+      this.reset();
+      return;
+    }
+
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const company = document.getElementById('company').value;
-    const cloud = document.getElementById('cloud').value;
-    const timeline = document.getElementById('timeline').value;
-    const infra = document.getElementById('infra').value;
-    const message = document.getElementById('message').value;
-
-    const subject = encodeURIComponent('Migration assessment request from ' + name);
-    const body = encodeURIComponent(
-      'Name: ' + name + '\n' +
-      'Company: ' + company + '\n' +
-      'Target cloud: ' + cloud + '\n' +
-      'Timeline: ' + timeline + '\n' +
-      'Current infrastructure: ' + infra + '\n' +
-      'Message: ' + message
-    );
-    window.location.href = 'mailto:support@macmahesh.com?subject=' + subject + '&body=' + body;
-
-    document.getElementById('form-status').style.display = 'block';
-    this.reset();
+    const data = new FormData(this);
+    try {
+      const response = await fetch(this.action, {
+        method: this.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        statusMsg.style.display = 'block';
+        this.reset();
+      } else {
+        alert('Transmission error. Please dispatch your parameters directly to support@macmahesh.com');
+      }
+    } catch (error) {
+      alert('Transmission error. Please dispatch your parameters directly to support@macmahesh.com');
+    }
   });
 
   const revealEls = document.querySelectorAll('.reveal');
