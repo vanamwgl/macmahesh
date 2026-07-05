@@ -4,8 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MacMahesh &mdash; On-Prem to Azure &amp; AWS Migration, SRE &amp; DevOps</title>
+<meta name="description" content="Independent SRE/DevOps consultant helping teams migrate from on-prem infrastructure to Azure and AWS &mdash; assessment, phased execution, and post-migration reliability engineering.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://macmahesh.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="MacMahesh &mdash; On-Prem to Azure &amp; AWS Migration, SRE &amp; DevOps">
+<meta property="og:description" content="Independent SRE/DevOps consultant helping teams migrate from on-prem infrastructure to Azure and AWS, with reliability engineering built in from day one.">
+<meta property="og:url" content="https://macmahesh.com/">
+<meta property="og:site_name" content="MacMahesh">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MacMahesh &mdash; On-Prem to Azure &amp; AWS Migration, SRE &amp; DevOps">
+<meta name="twitter:description" content="Independent SRE/DevOps consultant for on-prem to Azure/AWS migration, execution, and post-migration reliability engineering.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='6' fill='%230f2a47'/%3E%3Cpath d='M8 35 L8 13 L24 27 L40 13 L40 35' fill='none' stroke='%238fd6e8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='40' cy='13' r='2.8' fill='%230f2a47' stroke='%23f5a623' stroke-width='2.4'/%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "MacMahesh",
+  "url": "https://macmahesh.com/",
+  "email": "support@macmahesh.com",
+  "description": "Independent SRE/DevOps consulting for on-prem to Azure and AWS cloud migration, including readiness assessment, phased execution, and post-migration reliability engineering.",
+  "areaServed": "Remote / Global",
+  "serviceType": ["Cloud Migration Consulting", "Site Reliability Engineering", "DevOps Consulting"]
+}
+</script>
 <style>
   :root{
     --navy-deep:#0a1e33;
@@ -250,11 +280,6 @@
     border:1px solid rgba(22,32,43,.25);padding:7px 12px;
     color:rgba(22,32,43,.75);
   }
-  .placeholder-note{
-    margin-top:22px;font-size:12.5px;color:var(--amber-deep);
-    font-family:'JetBrains Mono',monospace;
-    border-left:2px solid var(--amber-deep);padding-left:10px;
-  }
 
   /* FAQ */
   .faq-item{border-top:1px solid rgba(143,214,232,.18);padding:22px 0;}
@@ -296,10 +321,24 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="logo-mark" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="21" fill="none" stroke="var(--line)" stroke-width="1" opacity="0.35"/>
+      <path d="M8 35 L8 13 L24 27 L40 13 L40 35" fill="none" stroke="var(--line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="8" cy="35" r="2.2" fill="var(--navy)" stroke="var(--line)" stroke-width="2"/>
+      <circle cx="8" cy="13" r="2.2" fill="var(--navy)" stroke="var(--line)" stroke-width="2"/>
+      <circle cx="24" cy="27" r="2.2" fill="var(--navy)" stroke="var(--line)" stroke-width="2"/>
+      <circle cx="40" cy="35" r="2.2" fill="var(--navy)" stroke="var(--line)" stroke-width="2"/>
+      <circle cx="40" cy="13" r="2.8" fill="var(--navy)" stroke="var(--amber)" stroke-width="2.4"/>
+    </symbol>
+  </defs>
+</svg>
+
 <header class="nav">
   <div class="nav-inner">
     <div class="brand">
-      <svg class="brand-mark" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f5a623" stroke-width="1.6"/><path d="M12 6v6l4 2" stroke="#f5a623" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg class="brand-mark" aria-hidden="true" viewBox="0 0 48 48" width="26" height="26"><use href="#logo-mark"/></svg>
       MacMahesh
     </div>
     <nav class="links">
@@ -334,7 +373,7 @@
 
       <div class="route-card corners">
         <div class="fig-label">FIG. 01 &mdash; Migration route</div>
-        <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Migration route diagram: on-prem infrastructure moves through assess, rehost, replatform, and refactor stages to reach an Azure or AWS cloud region.">
           <!-- dashed baseline path -->
           <path d="M40 220 C 120 220, 140 120, 220 120 S 340 60, 440 60" fill="none" stroke="#4c7f95" stroke-width="2" stroke-dasharray="5 6"/>
           <!-- on-prem rack -->
@@ -423,31 +462,31 @@
       </div>
       <div class="services-grid">
         <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="7" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg>
+          <svg class="service-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="18" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><circle cx="7" cy="7" r="1" fill="currentColor"/><circle cx="7" cy="17" r="1" fill="currentColor"/></svg>
           <span class="tag">Phase 01</span>
           <h3>Migration readiness assessment</h3>
           <p>Full inventory of servers, apps, and databases, dependency mapping, and a total-cost-of-ownership comparison so you know what to move, what to leave, and what it will cost before committing.</p>
         </div>
         <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none"><path d="M4 12h6l2-5 4 10 2-5h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="service-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 12h6l2-5 4 10 2-5h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span class="tag">Phase 02</span>
           <h3>Migration execution</h3>
           <p>Phased, wave-based cutovers &mdash; rehost, replatform, or refactor per workload &mdash; with rollback plans and staging validation, so production keeps running while the move happens.</p>
         </div>
         <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="service-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           <span class="tag">Phase 03</span>
           <h3>Post-migration SRE</h3>
           <p>Monitoring, alerting, and SLOs from day one, plus incident response runbooks and on-call setup, so reliability is a property of the system, not an afterthought.</p>
         </div>
         <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none"><path d="M4 7l4-4 4 4M8 3v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 17l-4 4-4-4M16 21V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="service-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M4 7l4-4 4 4M8 3v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 17l-4 4-4-4M16 21V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span class="tag">Phase 04</span>
           <h3>CI/CD &amp; infrastructure as code</h3>
           <p>Terraform or Bicep-managed environments, containerized workloads, and deployment pipelines that make repeat changes routine instead of risky.</p>
         </div>
         <div class="service-card">
-          <svg class="service-icon" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="service-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span class="tag">Phase 05</span>
           <h3>Cost &amp; reliability optimization</h3>
           <p>Right-sizing, reserved capacity, and backup/disaster-recovery design with clear recovery time and recovery point targets &mdash; so the cloud bill and the uptime both make sense.</p>
@@ -582,14 +621,18 @@
     <div class="wrap about-grid">
       <div>
         <div class="fig-label">FIG. 07 &mdash; About</div>
-        <h2 style="font-size:clamp(24px,2.6vw,32px);">Add your name and background here</h2>
-        <p style="color:rgba(22,32,43,.72);">Replace this paragraph with two or three sentences on your real experience &mdash; years working in SRE/DevOps roles, the industries you've supported, and the scale of environments you've run (number of servers, regions, or workloads). Specifics build more trust here than adjectives.</p>
+        <h2 style="font-size:clamp(24px,2.6vw,32px);">Mahesh &mdash; independent SRE / DevOps consultant</h2>
+        <p style="color:rgba(22,32,43,.72);">I work directly with engineering and IT leads to move production systems off on-prem hardware and onto Azure or AWS, then keep them reliable afterward. No account managers, no bench of junior staff learning on your infrastructure &mdash; you work with the person actually doing the migration, from the first discovery call to the last cutover.</p>
+        <p style="color:rgba(22,32,43,.72);margin-top:14px;">Every engagement is scoped around your real environment, not a templated package. That means an honest answer on timeline and cost, and a plan that accounts for what your systems actually depend on.</p>
+        <!-- Personalize: add your real years of experience, industries served, and 1-2 anonymized past-project examples here for stronger trust signals. -->
         <div class="badge-row">
-          <span class="badge">AWS Certified &mdash; add cert</span>
-          <span class="badge">Azure Certified &mdash; add cert</span>
-          <span class="badge">Kubernetes / CKA &mdash; optional</span>
+          <span class="badge">Terraform &amp; Bicep</span>
+          <span class="badge">Kubernetes / AKS / EKS</span>
+          <span class="badge">Azure Migrate</span>
+          <span class="badge">AWS Migration Hub</span>
+          <span class="badge">Prometheus &amp; Grafana</span>
+          <span class="badge">CI/CD (GitHub Actions, Azure DevOps)</span>
         </div>
-        <div class="placeholder-note">Editable: swap in your real name, headshot, certifications, and 1&ndash;2 anonymized past-project examples before publishing.</div>
       </div>
       <div>
         <div class="fig-label">FIG. 08 &mdash; What clients typically bring</div>
@@ -599,6 +642,15 @@
           <li>Compliance pressure (data residency, HIPAA, PCI DSS, SOC 2)</li>
           <li>A team that knows the applications but not the target cloud</li>
           <li>No current monitoring or incident response process worth the name</li>
+        </ul>
+        <div class="fig-label" style="margin-top:32px;">FIG. 08a &mdash; The 6 Rs, in plain terms</div>
+        <ul style="padding-left:0;list-style:none;color:rgba(22,32,43,.78);font-size:14px;line-height:1.7;">
+          <li><strong>Rehost</strong> &mdash; move as-is, fastest and lowest risk</li>
+          <li><strong>Replatform</strong> &mdash; small upgrades in transit (e.g. managed database)</li>
+          <li><strong>Refactor</strong> &mdash; redesign for cloud-native scaling</li>
+          <li><strong>Repurchase</strong> &mdash; swap for a SaaS equivalent</li>
+          <li><strong>Retire</strong> &mdash; decommission what's no longer needed</li>
+          <li><strong>Retain</strong> &mdash; keep on-prem where it still makes sense</li>
         </ul>
       </div>
     </div>
@@ -640,7 +692,8 @@
         <div class="fig-label">FIG. 10 &mdash; Get in touch</div>
         <h2 style="font-size:clamp(24px,2.8vw,32px);">Tell me what you're running today</h2>
         <p style="color:rgba(22,32,43,.72);margin-top:12px;">A few details up front means our first call can go straight to the useful part &mdash; what's worth migrating, and how.</p>
-        <div class="placeholder-note" style="margin-top:26px;">Submitting this form opens an email to support@macmahesh.com with the details pre-filled. For a form that submits silently in the background instead, connect it to a service like Formspree or Basin.</div>
+        <p style="margin-top:26px;font-size:13.5px;color:rgba(22,32,43,.6);font-family:'JetBrains Mono',monospace;">Submitting this form opens an email to support@macmahesh.com with your details pre-filled.</p>
+        <!-- To submit silently in the background instead of opening the visitor's email client, connect this form to a service like Formspree or Basin. -->
       </div>
       <form id="contact-form">
         <div class="row-2">
@@ -690,7 +743,7 @@
 <footer class="blueprint-bg deep">
   <div class="wrap footer-grid">
     <div class="brand" style="font-size:16px;">
-      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" width="18" height="18"><circle cx="12" cy="12" r="10" stroke="#8fd6e8" stroke-width="1.6"/><path d="M12 6v6l4 2" stroke="#8fd6e8" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg class="brand-mark" aria-hidden="true" viewBox="0 0 48 48" width="22" height="22"><use href="#logo-mark"/></svg>
       MacMahesh
     </div>
     <div class="mono">support@macmahesh.com &nbsp;&middot;&nbsp; macmahesh.com &nbsp;&middot;&nbsp; Rev. 2026</div>
